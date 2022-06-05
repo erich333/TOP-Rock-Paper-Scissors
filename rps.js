@@ -49,6 +49,12 @@ function game() {
         let computerSelection = computerPlay();
         let roundResult = playRound(playerSelection, computerSelection);
         
+        if(roundResult === "win") {
+            playerWins += 1;
+        } else if(roundResult === "loss") {
+            computerWins += 1;
+        }
+        
         gameCount += 1;
         if(gameCount >= 5) {
             keepGoing = false;
