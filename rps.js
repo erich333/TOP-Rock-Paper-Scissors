@@ -38,6 +38,21 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
+function roundMessage(roundResult, playerSelection, computerSelection) {
+    switch(roundResult) {
+        case "tie":
+            return "A tie! You both picked " + playerSelection + "!";
+        case "win":
+            return "You win! " + playerSelection + " beats " 
+                + computerSelection + "!";
+        case "loss":
+            return "You lose! " + computerSelection + " beats " 
+                + playerSelection + "!";
+        default:
+            console.error("Unexpected input to roundMessage");
+    }
+}
+
 function game() {
     let keepGoing = true;
     let gameCount = 0;
@@ -54,7 +69,8 @@ function game() {
         } else if(roundResult === "loss") {
             computerWins += 1;
         }
-
+        
+        console.log(roundMessage(roundResult, playerSelection, computerSelection));
         gameCount += 1;
         if(gameCount >= 5) {
             keepGoing = false;
