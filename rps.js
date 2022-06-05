@@ -68,6 +68,22 @@ function gameOver(playerWins, computerWins) {
     }
 }
 
+function isInputValid(playerSelection) {
+    if(typeof(playerSelection) != "string") {
+        return false;
+    }
+    
+    playerSelection = playerSelection.toLowerCase();
+    switch(playerSelection) {
+        case 'rock':
+        case 'paper':
+        case 'scissors':
+            return true;
+        default:
+            return false;
+    }
+}
+
 function game() {
     let keepGoing = true;
     let gameCount = 0;
@@ -76,6 +92,9 @@ function game() {
 
     while(keepGoing) {
         let playerSelection = prompt("Rock Paper or Scissors?");
+        while(!isInputValid(playerSelection)) {
+            playerSelection = prompt("Input invalid! Please type Rock, Paper, or Scissors:");
+        }
         let computerSelection = computerPlay();
         let roundResult = playRound(playerSelection, computerSelection);
         
