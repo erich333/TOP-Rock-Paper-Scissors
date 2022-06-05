@@ -92,5 +92,5 @@ function game() {
         }
     }
 
-    gameOver(playerWins, computerWins);
+    console.log(gameOver(playerWins, computerWins));
 }
