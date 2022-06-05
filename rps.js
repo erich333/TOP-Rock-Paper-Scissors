@@ -53,6 +53,21 @@ function roundMessage(roundResult, playerSelection, computerSelection) {
     }
 }
 
+function gameOver(playerWins, computerWins) {
+    if(playerWins === computerWins) {
+        return "It's a tie! You both won " + 
+            playerWins.toString() + " matches!";
+    } else if(playerWins > computerWins) {
+        return "You won! Score: " + 
+            playerWins.toString() + " to " + computerWins.toString(); 
+    } else if(playerWins < computerWins) {
+        return "You lost! Score: " + 
+            computerWins.toString() + " to " + playerWins.toString(); 
+    } else {
+        console.error("Unexpected result in gameOver()");
+    }
+}
+
 function game() {
     let keepGoing = true;
     let gameCount = 0;
@@ -76,4 +91,6 @@ function game() {
             keepGoing = false;
         }
     }
+
+    gameOver(playerWins, computerWins);
 }
