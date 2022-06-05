@@ -28,12 +28,12 @@ function playRound(playerSelection, computerSelection) {
         return "loss";
     } else if(playerSelection === "Paper" && computerSelection === "Rock") {
         return "win";
-    }  else if(playerSelection === "Scissors" && computerSelection === "Rock") {
+    } else if(playerSelection === "Scissors" && computerSelection === "Rock") {
         return "loss";
-    }  else if(playerSelection === "Scissors" && computerSelection === "Paper") {
+    } else if(playerSelection === "Scissors" && computerSelection === "Paper") {
         return "win";
     } else {
-        console.error("Unexpected game outcome in playRound!");
+        console.error("Unexpected game outcome in playRound()!");
     }
     
 }
@@ -54,7 +54,7 @@ function game() {
         } else if(roundResult === "loss") {
             computerWins += 1;
         }
-        
+
         gameCount += 1;
         if(gameCount >= 5) {
             keepGoing = false;
