@@ -39,5 +39,17 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    
+    let keepGoing = true;
+    let gameCount = 0;
+    let playerWins = 0;
+    let computerWins = 0;
+
+    while(keepGoing) {
+        let playerSelection = prompt("Rock Paper or Scissors?");
+        
+        gameCount += 1;
+        if(gameCount >= 5) {
+            keepGoing = false;
+        }
+    }
 }
