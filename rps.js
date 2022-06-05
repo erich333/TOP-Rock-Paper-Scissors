@@ -46,6 +46,8 @@ function game() {
 
     while(keepGoing) {
         let playerSelection = prompt("Rock Paper or Scissors?");
+        let computerSelection = computerPlay();
+        let roundResult = playRound(playerSelection, computerSelection);
         
         gameCount += 1;
         if(gameCount >= 5) {
