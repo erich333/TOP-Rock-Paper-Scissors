@@ -9,3 +9,9 @@ function computerPlay() {
             return "Scissors";
     }
 }
+
+function playRound(playerSelection, computerSelection) {
+    if( typeof(playerSelection) != 'string' ) {
+        console.error("Invalid input");
+    }
+}
