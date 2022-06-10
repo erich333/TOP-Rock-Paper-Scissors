@@ -39,6 +39,10 @@ const inputButtons = document.querySelectorAll('.inputButtonContainer button');
 
 inputButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
-        console.log(playRound(e.target.textContent, computerPlay()));
+        updateGame(e.target.textContent, computerPlay());
     });
 });
+
+function updateGame(playerSelection, computerSelection) {
+    console.log(playRound(playerSelection, computerSelection));
+}
