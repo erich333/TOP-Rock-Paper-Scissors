@@ -34,51 +34,6 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
-function roundMessage(roundResult, playerSelection, computerSelection) {
-    switch(roundResult) {
-        case "tie":
-            return "A tie! You both picked " + playerSelection + "!";
-        case "win":
-            return "You win! " + playerSelection + " beats " 
-                + computerSelection + "!";
-        case "loss":
-            return "You lose! " + computerSelection + " beats " 
-                + playerSelection + "!";
-        default:
-            console.error("Unexpected input to roundMessage");
-    }
-}
-
-function gameOver(playerWins, computerWins) {
-    if(playerWins === computerWins) {
-        return "It's a tie! You both won " + 
-            playerWins.toString() + " matches!";
-    } else if(playerWins > computerWins) {
-        return "You won! Score: " + 
-            playerWins.toString() + " to " + computerWins.toString(); 
-    } else if(playerWins < computerWins) {
-        return "You lost! Score: " + 
-            computerWins.toString() + " to " + playerWins.toString(); 
-    } else {
-        console.error("Unexpected result in gameOver()");
-    }
-}
-
-function isInputValid(playerSelection) {
-    if(typeof(playerSelection) != "string") {
-        return false;
-    }
-    
-    playerSelection = playerSelection.toLowerCase();
-    switch(playerSelection) {
-        case 'rock':
-        case 'paper':
-        case 'scissors':
-            return true;
-        default:
-            return false;
-    }
-}
 
 const rockButton = document.querySelector('#rockButton');
 const paperButton = document.querySelector('#paperButton');
