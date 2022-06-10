@@ -44,5 +44,7 @@ inputButtons.forEach((button) => {
 });
 
 function updateGame(playerSelection, computerSelection) {
+    console.log(`Computer played: ${computerSelection}`);
+    console.log(`Player played  : ${playerSelection}`);
     console.log(playRound(playerSelection, computerSelection));
 }
