@@ -49,8 +49,10 @@ function updateGame(playerSelection, computerSelection) {
     let newScore = updateScoreboard(roundResult);
     if(newScore >= WINNINGSCORE && roundResult === 'win') {
         alert('You win!');
+        resetGame();
     } else if(newScore >= WINNINGSCORE && roundResult === 'loss') {
         alert('Computer wins!');
+        resetGame();
     }
     console.log(`Computer played: ${computerSelection}`);
     console.log(`Player played  : ${playerSelection}`);
@@ -70,4 +72,9 @@ function incrementScore(workingScoreID) {
     currentScore = Number(scoreDisplay.textContent);
     scoreDisplay.textContent = currentScore + 1;
     return Number(scoreDisplay.textContent);
+}
+
+function resetGame() {
+    const scoreDisplays = document.querySelectorAll('.scoreDisplay');
+    scoreDisplays.forEach( (display) => display.textContent = 0 );
 }
