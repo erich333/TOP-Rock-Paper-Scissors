@@ -44,17 +44,17 @@ inputButtons.forEach((button) => {
 });
 
 function updateGame(playerSelection, computerSelection) {
-    let gameResult = playRound(playerSelection, computerSelection);
-    let newScore = updateScoreboard(gameResult);
+    let roundResult = playRound(playerSelection, computerSelection);
+    let newScore = updateScoreboard(roundResult);
     console.log(`Computer played: ${computerSelection}`);
     console.log(`Player played  : ${playerSelection}`);
-    console.log(gameResult);
+    console.log(roundResult);
 }
 
-function updateScoreboard(gameResult) {
-    if(gameResult === 'win') {
+function updateScoreboard(roundResult) {
+    if(roundResult === 'win') {
         return incrementScore('#playerScore');
-    } else if(gameResult === 'loss') {
+    } else if(roundResult === 'loss') {
         return incrementScore('#computerScore');
     }
 }
