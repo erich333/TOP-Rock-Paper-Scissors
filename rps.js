@@ -39,6 +39,6 @@ const inputButtons = document.querySelectorAll('.inputButtonContainer button');
 
 inputButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
-        playRound(e.target.textContent, computerPlay());
+        console.log(playRound(e.target.textContent, computerPlay()));
     });
 });
