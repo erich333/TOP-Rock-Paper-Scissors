@@ -80,36 +80,6 @@ function isInputValid(playerSelection) {
     }
 }
 
-function game() {
-    let keepGoing = true;
-    let gameCount = 0;
-    let playerWins = 0;
-    let computerWins = 0;
-
-    while(keepGoing) {
-        let playerSelection = prompt("Rock Paper or Scissors?");
-        while(!isInputValid(playerSelection)) {
-            playerSelection = prompt("Input invalid! Please type Rock, Paper, or Scissors:");
-        }
-        let computerSelection = computerPlay();
-        let roundResult = playRound(playerSelection, computerSelection);
-        
-        if(roundResult === "win") {
-            playerWins += 1;
-        } else if(roundResult === "loss") {
-            computerWins += 1;
-        }
-        
-        console.log(roundMessage(roundResult, playerSelection, computerSelection));
-        gameCount += 1;
-        if(gameCount >= 5) {
-            keepGoing = false;
-        }
-    }
-
-    console.log(gameOver(playerWins, computerWins));
-}
-
 const rockButton = document.querySelector('#rockButton');
 const paperButton = document.querySelector('#paperButton');
 const scissorsButton = document.querySelector('#scissorsButton');
