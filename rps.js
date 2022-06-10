@@ -47,6 +47,9 @@ inputButtons.forEach((button) => {
 function updateGame(playerSelection, computerSelection) {
     let roundResult = playRound(playerSelection, computerSelection);
     let newScore = updateScoreboard(roundResult);
+    console.log(`Computer played: ${computerSelection}`);
+    console.log(`Player played  : ${playerSelection}`);
+    console.log(roundResult);
     if(newScore >= WINNINGSCORE && roundResult === 'win') {
         alert('You win!');
         resetGame();
@@ -54,9 +57,6 @@ function updateGame(playerSelection, computerSelection) {
         alert('Computer wins!');
         resetGame();
     }
-    console.log(`Computer played: ${computerSelection}`);
-    console.log(`Player played  : ${playerSelection}`);
-    console.log(roundResult);
 }
 
 function updateScoreboard(roundResult) {
