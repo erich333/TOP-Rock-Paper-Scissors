@@ -45,7 +45,7 @@ inputButtons.forEach((button) => {
 
 function updateGame(playerSelection, computerSelection) {
     let gameResult = playRound(playerSelection, computerSelection);
-    updateScoreboard(gameResult);
+    let newScore = updateScoreboard(gameResult);
     console.log(`Computer played: ${computerSelection}`);
     console.log(`Player played  : ${playerSelection}`);
     console.log(gameResult);
@@ -53,9 +53,9 @@ function updateGame(playerSelection, computerSelection) {
 
 function updateScoreboard(gameResult) {
     if(gameResult === 'win') {
-        incrementScore('#playerScore');
+        return incrementScore('#playerScore');
     } else if(gameResult === 'loss') {
-        incrementScore('#computerScore');
+        return incrementScore('#computerScore');
     }
 }
 
@@ -63,4 +63,5 @@ function incrementScore(workingScoreID) {
     const scoreDisplay = document.querySelector(workingScoreID);
     currentScore = Number(scoreDisplay.textContent);
     scoreDisplay.textContent = currentScore + 1;
+    return Number(scoreDisplay.textContent);
 }
