@@ -35,10 +35,10 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-const rockButton = document.querySelector('#rockButton');
-const paperButton = document.querySelector('#paperButton');
-const scissorsButton = document.querySelector('#scissorsButton');
+const inputButtons = document.querySelectorAll('.inputButtonContainer button');
 
-rockButton.addEventListener('click', () => console.log(playRound('Rock', computerPlay())));
-paperButton.addEventListener('click', () => console.log(playRound('Paper', computerPlay())));
-scissorsButton.addEventListener('click', () => console.log(playRound('Scissors', computerPlay())));
+inputButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        playRound(e.target.textContent, computerPlay());
+    });
+});
