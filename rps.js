@@ -44,7 +44,13 @@ inputButtons.forEach((button) => {
 });
 
 function updateGame(playerSelection, computerSelection) {
+    let gameResult = playRound(playerSelection, computerSelection);
+    updateScoreboard(gameResult);
     console.log(`Computer played: ${computerSelection}`);
     console.log(`Player played  : ${playerSelection}`);
-    console.log(playRound(playerSelection, computerSelection));
+    console.log(gameResult);
+}
+
+function updateScoreboard(gameResult) {
+
 }
