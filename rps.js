@@ -52,5 +52,15 @@ function updateGame(playerSelection, computerSelection) {
 }
 
 function updateScoreboard(gameResult) {
+    if(gameResult === 'win') {
+        incrementScore('#playerScore');
+    } else if(gameResult === 'loss') {
+        incrementScore('#computerScore');
+    }
+}
 
+function incrementScore(workingScoreID) {
+    const scoreDisplay = document.querySelector(workingScoreID);
+    currentScore = Number(scoreDisplay.textContent);
+    scoreDisplay.textContent = currentScore + 1;
 }
