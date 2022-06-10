@@ -36,6 +36,7 @@ function playRound(playerSelection, computerSelection) {
 
 
 const inputButtons = document.querySelectorAll('.inputButtonContainer button');
+const WINNINGSCORE = 5;
 
 inputButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
@@ -46,6 +47,11 @@ inputButtons.forEach((button) => {
 function updateGame(playerSelection, computerSelection) {
     let roundResult = playRound(playerSelection, computerSelection);
     let newScore = updateScoreboard(roundResult);
+    if(newScore >= WINNINGSCORE && roundResult === 'win') {
+        alert('You win!');
+    } else if(newScore >= WINNINGSCORE && roundResult === 'loss') {
+        alert('Computer wins!');
+    }
     console.log(`Computer played: ${computerSelection}`);
     console.log(`Player played  : ${playerSelection}`);
     console.log(roundResult);
