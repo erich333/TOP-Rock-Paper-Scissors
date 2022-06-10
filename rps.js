@@ -109,3 +109,11 @@ function game() {
 
     console.log(gameOver(playerWins, computerWins));
 }
+
+const rockButton = document.querySelector('#rockButton');
+const paperButton = document.querySelector('#paperButton');
+const scissorsButton = document.querySelector('#scissorsButton');
+
+rockButton.addEventListener('click', () => console.log(playRound('Rock', computerPlay())));
+paperButton.addEventListener('click', () => console.log(playRound('Paper', computerPlay())));
+scissorsButton.addEventListener('click', () => console.log(playRound('Scissors', computerPlay())));
