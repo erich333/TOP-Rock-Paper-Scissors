@@ -37,6 +37,7 @@ function playRound(playerSelection, computerSelection) {
 
 const inputButtons = document.querySelectorAll('.inputButtonContainer button');
 const WINNINGSCORE = 5;
+const alertDelay = 1;
 
 inputButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
@@ -52,7 +53,8 @@ function updateGame(playerSelection, computerSelection) {
     console.log(`Computer played: ${computerSelection}`);
     console.log(`Player played  : ${playerSelection}`);
     console.log(roundResult);
-    checkScore(newScore, roundResult);
+    setTimeout(() => checkScore(newScore, roundResult), 
+        alertDelay);
 }
 
 function updateScoreboard(roundResult) {
