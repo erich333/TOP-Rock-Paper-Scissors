@@ -50,9 +50,6 @@ function updateGame(playerSelection, computerSelection) {
     let newScore = updateScoreboard(roundResult);
     clearButtons();
     lightUpButton(computerSelection);
-    console.log(`Computer played: ${computerSelection}`);
-    console.log(`Player played  : ${playerSelection}`);
-    console.log(roundResult);
     setTimeout(() => checkScore(newScore, roundResult), 
         alertDelay);
 }
@@ -75,7 +72,6 @@ function incrementScore(workingScoreID) {
 function lightUpButton(buttonSelected) {
     const buttonID = '#computer' + buttonSelected + 'Button';
     const button = document.querySelector(buttonID);
-    console.log(buttonID);
     button.classList.add('litButton');
 }
 
