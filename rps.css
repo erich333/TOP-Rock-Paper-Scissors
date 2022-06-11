@@ -7,6 +7,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color:aliceblue;
+    background-color: black;
 }
 
 .scoreboardContainer {
@@ -15,8 +17,10 @@ body {
 }
 
 .scoreboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 60px;
-
 }
 
 .scoreDisplay {
