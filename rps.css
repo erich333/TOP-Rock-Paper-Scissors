@@ -8,3 +8,22 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.scoreboardContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.scoreboard {
+    width: 60px;
+
+}
+
+.scoreDisplay {
+    display:flex;
+    background-color: black;
+    color: greenyellow;
+    font-family: monospace;
+    font-size: 50px;
+    justify-content: center;
+}
