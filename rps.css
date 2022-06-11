@@ -27,3 +27,12 @@ body {
     font-size: 50px;
     justify-content: center;
 }
+
+.computerPlayerContainer button {
+    color: black;
+    background-color: black;
+}
+
+.computerPlayerContainer .litButton {
+    color: red;
+}

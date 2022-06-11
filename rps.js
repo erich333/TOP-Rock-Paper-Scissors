@@ -47,6 +47,8 @@ inputButtons.forEach((button) => {
 function updateGame(playerSelection, computerSelection) {
     let roundResult = playRound(playerSelection, computerSelection);
     let newScore = updateScoreboard(roundResult);
+    clearButtons();
+    lightUpButton(computerSelection);
     console.log(`Computer played: ${computerSelection}`);
     console.log(`Player played  : ${playerSelection}`);
     console.log(roundResult);
@@ -72,6 +74,18 @@ function incrementScore(workingScoreID) {
     currentScore = Number(scoreDisplay.textContent);
     scoreDisplay.textContent = currentScore + 1;
     return Number(scoreDisplay.textContent);
+}
+
+function lightUpButton(buttonSelected) {
+    const buttonID = '#computer' + buttonSelected + 'Button';
+    const button = document.querySelector(buttonID);
+    console.log(buttonID);
+    button.classList.add('litButton');
+}
+
+function clearButtons() {
+    const computerButtons = document.querySelectorAll('.computerPlayerContainer button');
+    computerButtons.forEach(button => button.classList.remove('litButton'));
 }
 
 function resetGame() {
