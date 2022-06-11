@@ -17,9 +17,6 @@ body {
 }
 
 .scoreboard {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     width: 60px;
 }
 
@@ -32,9 +29,23 @@ body {
     justify-content: center;
 }
 
+.computerPlayerContainer {
+    display: flex;
+}
+
 .computerPlayerContainer button {
+    flex: auto;
     color: black;
     background-color: black;
+}
+
+
+.inputButtonContainer {
+    display: flex;
+}
+
+.inputButtonContainer button {
+    flex: auto;
 }
 
 .computerPlayerContainer .litButton {
