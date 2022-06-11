@@ -52,13 +52,7 @@ function updateGame(playerSelection, computerSelection) {
     console.log(`Computer played: ${computerSelection}`);
     console.log(`Player played  : ${playerSelection}`);
     console.log(roundResult);
-    if(newScore >= WINNINGSCORE && roundResult === 'win') {
-        alert('You win!');
-        resetGame();
-    } else if(newScore >= WINNINGSCORE && roundResult === 'loss') {
-        alert('Computer wins!');
-        resetGame();
-    }
+    checkScore(newScore, roundResult);
 }
 
 function updateScoreboard(roundResult) {
@@ -91,4 +85,15 @@ function clearButtons() {
 function resetGame() {
     const scoreDisplays = document.querySelectorAll('.scoreDisplay');
     scoreDisplays.forEach( (display) => display.textContent = 0 );
+    clearButtons();
+}
+
+function checkScore(newScore, roundResult) {
+    if(newScore >= WINNINGSCORE && roundResult === 'win') {
+        alert('You win!');
+        resetGame();
+    } else if(newScore >= WINNINGSCORE && roundResult === 'loss') {
+        alert('Computer wins!');
+        resetGame();
+    }
 }
