@@ -68,8 +68,9 @@ body {
 .computerPlayerContainer button {
     flex: auto;
     width: 100px;
-    color: black;
-    background-color: black;
+    color: rgb(134, 134, 134);
+    background-color: rgb(134, 134, 134);
+    font-family: monospace;
 }
 
 
@@ -85,5 +86,5 @@ body {
 }
 
 .computerPlayerContainer .litButton {
-    color: red;
+    color: black;
 }
