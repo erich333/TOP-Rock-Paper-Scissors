@@ -47,6 +47,7 @@ body {
 
 .computerPlayerContainer button {
     flex: auto;
+    width: 100px;
     color: black;
     background-color: black;
 }
@@ -58,6 +59,7 @@ body {
 
 .inputButtonContainer button {
     flex: auto;
+    width: 100px;
 }
 
 .computerPlayerContainer .litButton {
