@@ -52,6 +52,15 @@ body {
     color:black;
 }
 
+#resetButton {
+    flex: auto;
+    align-self: center;
+    border-radius: 20px;
+    width:65%;
+    font-family: monospace;
+    background-color: rgb(134, 134, 134);
+}
+
 .computerPlayerContainer {
     display: flex;
 }
