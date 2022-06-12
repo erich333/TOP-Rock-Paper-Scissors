@@ -52,6 +52,10 @@ body {
     color:black;
 }
 
+.litWinLabel {
+    color:greenyellow;
+}
+
 #resetButton {
     flex: auto;
     align-self: center;

@@ -35,23 +35,26 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-const inputButtons = document.querySelectorAll('.inputButtonContainer button');
-const WINNINGSCORE = 5;
-const alertDelay = 1;
 
+const WINNINGSCORE = 5;
+const alertDelay = 1000;
+
+const inputButtons = document.querySelectorAll('.inputButtonContainer button');
 inputButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
         updateGame(e.target.textContent, computerPlay());
     });
 });
 
+const resetButton = document.querySelector('#resetButton');
+resetButton.addEventListener('click', resetGame);
+
 function updateGame(playerSelection, computerSelection) {
     let roundResult = playRound(playerSelection, computerSelection);
     let newScore = updateScoreboard(roundResult);
     clearButtons();
     lightUpButton(computerSelection);
-    setTimeout(() => checkScore(newScore, roundResult), 
-        alertDelay);
+    checkScore(newScore, roundResult);
 }
 
 function updateScoreboard(roundResult) {
@@ -83,15 +86,19 @@ function clearButtons() {
 function resetGame() {
     const scoreDisplays = document.querySelectorAll('.scoreDisplay');
     scoreDisplays.forEach( (display) => display.textContent = 0 );
+    const winDisplays = document.querySelectorAll('.winLabel');
+    winDisplays.forEach( (display) => display.classList.remove('litWinLabel'));
     clearButtons();
 }
 
 function checkScore(newScore, roundResult) {
     if(newScore >= WINNINGSCORE && roundResult === 'win') {
-        alert('You win!');
-        resetGame();
+        const winText = document.querySelector('#playerWinMessage');
+        winText.classList.add('litWinLabel');
+        setTimeout(resetGame, alertDelay);
     } else if(newScore >= WINNINGSCORE && roundResult === 'loss') {
-        alert('Computer wins!');
-        resetGame();
+        const winText = document.querySelector('#computerWinMessage');
+        winText.classList.add('litWinLabel');
+        setTimeout(resetGame, alertDelay);
     }
 }
