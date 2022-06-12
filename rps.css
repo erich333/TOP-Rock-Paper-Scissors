@@ -80,6 +80,8 @@ body {
 .inputButtonContainer button {
     flex: auto;
     width: 100px;
+    background-color: rgb(134, 134, 134);
+    font-family: monospace;
 }
 
 .computerPlayerContainer .litButton {
