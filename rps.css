@@ -41,6 +41,17 @@ body {
     justify-content: center;
 }
 
+.gameStatusContainer {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.winLabel {
+    text-align: center;
+    color:black;
+}
+
 .computerPlayerContainer {
     display: flex;
 }
