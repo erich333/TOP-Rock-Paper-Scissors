@@ -48,6 +48,8 @@ body {
 }
 
 .winLabel {
+    font-family: monospace;
+    font-weight: 700;
     text-align: center;
     color:black;
 }
