@@ -89,16 +89,27 @@ function resetGame() {
     const winDisplays = document.querySelectorAll('.winLabel');
     winDisplays.forEach( (display) => display.classList.remove('litWinLabel'));
     clearButtons();
+    enableInput();
 }
 
 function checkScore(newScore, roundResult) {
     if(newScore >= WINNINGSCORE && roundResult === 'win') {
         const winText = document.querySelector('#playerWinMessage');
         winText.classList.add('litWinLabel');
-        setTimeout(resetGame, alertDelay);
+        disableInput();
     } else if(newScore >= WINNINGSCORE && roundResult === 'loss') {
         const winText = document.querySelector('#computerWinMessage');
         winText.classList.add('litWinLabel');
-        setTimeout(resetGame, alertDelay);
+        disableInput();
     }
+}
+
+function disableInput() {
+    const inputButtons = document.querySelectorAll('.inputButtonContainer button');
+    inputButtons.forEach(button => button.disabled = true);
+}
+
+function enableInput() {
+    const inputButtons = document.querySelectorAll('.inputButtonContainer button');
+    inputButtons.forEach(button => button.disabled = false);
 }
