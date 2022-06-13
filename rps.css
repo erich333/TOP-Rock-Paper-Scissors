@@ -9,9 +9,11 @@ body {
     align-items: center;
     background-color: black;
     font-family: monospace;
+    font-size: 18px;
 }
 
 button {
+    font-size: 18px;
     font-family: monospace;
     background-color: rgb(134, 134, 134);
 }
