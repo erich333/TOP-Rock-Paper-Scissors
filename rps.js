@@ -1,3 +1,16 @@
+const WINNINGSCORE = 5;
+const alertDelay = 1000;
+
+const inputButtons = document.querySelectorAll('.inputButtonContainer button');
+inputButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        updateGame(e.target.textContent, computerPlay());
+    });
+});
+
+const resetButton = document.querySelector('#resetButton');
+resetButton.addEventListener('click', resetGame);
+
 function computerPlay() {
     let num = Math.floor(Math.random()*3);
     switch(num) {
@@ -33,21 +46,6 @@ function playRound(playerSelection, computerSelection) {
     }
     
 }
-
-
-
-const WINNINGSCORE = 5;
-const alertDelay = 1000;
-
-const inputButtons = document.querySelectorAll('.inputButtonContainer button');
-inputButtons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-        updateGame(e.target.textContent, computerPlay());
-    });
-});
-
-const resetButton = document.querySelector('#resetButton');
-resetButton.addEventListener('click', resetGame);
 
 function updateGame(playerSelection, computerSelection) {
     let roundResult = playRound(playerSelection, computerSelection);
