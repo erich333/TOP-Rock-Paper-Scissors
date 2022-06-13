@@ -8,6 +8,12 @@ body {
     justify-content: center;
     align-items: center;
     background-color: black;
+    font-family: monospace;
+}
+
+button {
+    font-family: monospace;
+    background-color: rgb(134, 134, 134);
 }
 
 .scoreboardContainer {
@@ -24,7 +30,6 @@ body {
     text-align: center;
     font-weight: 700;
     color: greenyellow;
-    font-family: monospace;
 }
 
 #playerScoreLabel {
@@ -33,9 +38,7 @@ body {
 
 .scoreDisplay {
     display:flex;
-    background-color: black;
     color: greenyellow;
-    font-family: monospace;
     font-size: 50px;
     justify-content: center;
 }
@@ -47,7 +50,6 @@ body {
 }
 
 .winLabel {
-    font-family: monospace;
     font-weight: 700;
     text-align: center;
     color:black;
@@ -62,8 +64,6 @@ body {
     align-self: center;
     border-radius: 20px;
     width:65%;
-    font-family: monospace;
-    background-color: rgb(134, 134, 134);
 }
 
 .computerPlayerContainer {
@@ -74,8 +74,6 @@ body {
     flex: auto;
     width: 100px;
     color: rgb(134, 134, 134);
-    background-color: rgb(134, 134, 134);
-    font-family: monospace;
 }
 
 .inputButtonContainer {
@@ -85,8 +83,6 @@ body {
 .inputButtonContainer button {
     flex: auto;
     width: 100px;
-    background-color: rgb(134, 134, 134);
-    font-family: monospace;
 }
 
 .computerPlayerContainer .litButton {
